@@ -31,6 +31,7 @@ class DetailsViewController: UIViewController {
         if let coordinate = poi.location?.coordinate {
             //constructing the Annotation view (pin with the title) on the map
             let annotation = MKPointAnnotation()
+
             annotation.title = poi?.name
             annotation.coordinate.latitude = coordinate.latitude
             annotation.coordinate.longitude =  coordinate.longitude
@@ -93,7 +94,6 @@ extension DetailsViewController : MKMapViewDelegate {
 
             //preparation for a mode in Apple Maps
             let launchingOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
-
             if let coordinate = view.annotation?.coordinate {
                 //open apple maps with the required coordinate and launching options - walking mode
                 let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)

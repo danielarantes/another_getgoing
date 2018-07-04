@@ -52,7 +52,6 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         if let value = places[indexPath.row].rating {
             cell.ratingLbl.text = "\(value)"
         }
-
         
         if let imageUrl  = places[indexPath.row].iconUrl, let url = URL(string: imageUrl),
             let dataContents = try? Data(contentsOf: url), let imageSrc = UIImage(data: dataContents){

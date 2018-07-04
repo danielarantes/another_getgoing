@@ -10,12 +10,17 @@ import Foundation
 import UIKit
 
 class Constants {
-    static let apiKey = "AIzaSyB184Ra42Aj0exA_yqirto7jviWvzo6RgU"
+    static let apiKey = "AIzaSyB184Ra42Aj0exA_yqirto7jviWvzo6RgU" 
     static let scheme = "https"
     static let host = "maps.googleapis.com"
     static let textPlaceSearch = "/maps/api/place/textsearch/json"
     static let locationSearch = "/maps/api/place/nearbysearch/json"
     static let detailsPath = "/maps/api/place/details/json"
+    //    static let nearbyPlaceSearch = "/maps/api/place/nearbysearch/json"
+//    static let placeDetails = "/maps/api/place/details/json"
+//    static let placePhotoSearch = "/maps/api/place/photo"
+    
+   
     
     class func getUrl(photoReference: String) -> URL {
         var urlComponents = URLComponents()
@@ -34,7 +39,6 @@ class Constants {
 }
 
 extension UIImageView {
-    
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -49,7 +53,6 @@ extension UIImageView {
             }
             }.resume()
     }
-    
     func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)

@@ -40,9 +40,9 @@ class PlaceOfInterest {
         self.formattedAddress = json["formatted_address"] as? String
         self.iconUrl = json["icon"] as? String
         
-        let image = json["photos"] as? [[String: Any]]
-        self.photoReference = image![0]["photo_reference"] as? String
-        
+        if let image = json["photos"] as? [[String: Any]] {
+            self.photoReference = image[0]["photo_reference"] as? String
+        }
         if let geometry = json["geometry"] as? [String: Any] {
             if let locationCoordinate = geometry["location"] as? [String: Double
                 ] {
@@ -51,10 +51,7 @@ class PlaceOfInterest {
                 }
             }
         }
-        
     }
-    
-    
 }
 
 class Details: NSObject {
@@ -62,10 +59,7 @@ class Details: NSObject {
     var website: String?
     
     init?(json: [String: Any]){
-        
         self.phoneNumber = json["formatted_phone_number"] as? String
         self.website = json["website"] as? String
-        
-        
     }
 }

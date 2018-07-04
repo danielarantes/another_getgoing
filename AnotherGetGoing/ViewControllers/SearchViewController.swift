@@ -11,6 +11,11 @@ import CoreLocation
 
 class SearchViewController: UIViewController {
     
+    var rank = "Prominence"
+    var distance = "25000"
+    var openNow = false
+    
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchParameterTextField: UITextField!
     var currentLocation: CLLocation?
@@ -24,6 +29,11 @@ class SearchViewController: UIViewController {
         searchParameterTextField.delegate = self
     }
     
+    @IBAction func filterAction(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
     
     // MARK: - Button Actions
     @IBAction func searchButtonAction(_ sender: UIButton) {
@@ -31,7 +41,7 @@ class SearchViewController: UIViewController {
         if segmentedControl.selectedSegmentIndex == 0 {
             searchParameterTextField.resignFirstResponder()
             if let inputValue = searchParam {
-                GooglePlacesAPI.textSearch(query: inputValue, completionHandler: {(status, json) in
+                GooglePlacesAPI.textSearch(query: inputValue,rank: rank, distance: distance, open: openNow, completionHandler: {(status, json) in
                     if let jsonObj = json {
                         let places = APIParser.parseAPIResponse(json: jsonObj)
                         //update UI on the main thread!
@@ -59,7 +69,7 @@ class SearchViewController: UIViewController {
                     return
             }
             if let inputValue = searchParam {
-                GooglePlacesAPI.locationSearch(lat: currentLocation.coordinate.latitude, lng: currentLocation.coordinate.longitude, completionHandler: {(status, json) in
+                GooglePlacesAPI.locationSearch(lat: currentLocation.coordinate.latitude, lng: currentLocation.coordinate.longitude, rank: rank, distance: distance, open: openNow, completionHandler: {(status, json) in
                     if let jsonObj = json {
                         let places = APIParser.parseAPIResponse(json: jsonObj)
                         //update UI on the main thread!
@@ -80,7 +90,6 @@ class SearchViewController: UIViewController {
                 generalAlert(title: "Oops", message: "An error has occurred")
             }
         }
-        
     }
     
     @IBAction func searchSelectionChanged(_ sender: UISegmentedControl) {
@@ -160,5 +169,13 @@ extension SearchViewController: LocationServiceDelegate {
         
     }
     
+}
+
+extension SearchViewController: FilterDelegate {
+    func getItems(rankBy: String, distance: String, openNow: Bool) {
+        self.rank = rankBy
+        self.distance  = distance
+        self.openNow = openNow
+    }
 }
 

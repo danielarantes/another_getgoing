@@ -32,5 +32,7 @@ class NetworkingLayer {
             }
             dataTask.resume()
         }
+        
     }
+    
 }

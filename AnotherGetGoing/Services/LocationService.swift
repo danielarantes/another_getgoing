@@ -1,10 +1,4 @@
-//
-//  LocationService.swift
-//  AnotherGetGoing
-//
-//  Created by Alla Bondarenko on 2018-06-25.
-//  Copyright © 2018 Alla Bondarenko. All rights reserved.
-//
+
 
 import Foundation
 import CoreLocation

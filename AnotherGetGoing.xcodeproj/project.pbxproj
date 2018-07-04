@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12A1944420E5DD04005B0784 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A1944320E5DD04005B0784 /* FilterViewController.swift */; };
 		5D0F8A1120E18A8100B0F81D /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F8A1020E18A8100B0F81D /* LocationService.swift */; };
 		5DB6006720CF33BA004DD7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6006620CF33BA004DD7A3 /* AppDelegate.swift */; };
 		5DB6006C20CF33BA004DD7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DB6006A20CF33BA004DD7A3 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12A1944320E5DD04005B0784 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5D0F8A1020E18A8100B0F81D /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5DB6006320CF33BA004DD7A3 /* AnotherGetGoing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnotherGetGoing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB6006620CF33BA004DD7A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				5DED841220D1BEB4003F5464 /* SearchViewController.swift */,
 				5DDDD61F20D8568000743A3C /* SearchResultsViewController.swift */,
 				5DBDD32020DB0A7E006CE91E /* DetailsViewController.swift */,
+				12A1944320E5DD04005B0784 /* FilterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				5DDDD62620D85A1700743A3C /* NetworkingLayer.swift in Sources */,
 				5DB6006720CF33BA004DD7A3 /* AppDelegate.swift in Sources */,
 				5DDDD62220D8589900743A3C /* Constants.swift in Sources */,
+				12A1944420E5DD04005B0784 /* FilterViewController.swift in Sources */,
 				5D0F8A1120E18A8100B0F81D /* LocationService.swift in Sources */,
 				5DDDD62A20D86B6600743A3C /* PlaceOfInterest.swift in Sources */,
 				5DBDD31E20DAF3C2006CE91E /* POITableViewCell.swift in Sources */,
